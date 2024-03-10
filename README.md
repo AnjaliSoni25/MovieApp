@@ -54,7 +54,7 @@ dependencies {
 }
 
 
-
+ **Movie App  Gradle**   
 
 
 plugins {
@@ -95,7 +95,7 @@ android {
 }
 
 
- **Movie App  Gradle**      
+   
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
