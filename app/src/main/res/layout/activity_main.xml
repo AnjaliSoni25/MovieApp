@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.devrevtest.presentaion.MovieViewModel" />
+
+        <variable
+            name="activity"
+            type="com.example.devrevtest.presentaion.MainActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/white">
+
+        <!-- Custom Tab Layout -->
+        <LinearLayout
+            android:id="@+id/customTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/gradient_background"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/raounded_border_white">
+
+            <!-- Custom Tab 1 -->
+            <TextView
+                android:id="@+id/tabLatest"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/top_rated"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.onTabSelected(0)}"
+                android:textSize="14sp"/>
+
+            <!-- Custom Tab 2 -->
+            <TextView
+                android:id="@+id/tabPopular"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/popular"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.onTabSelected(1)}" />
+        </LinearLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/customTabLayout"/>
+
+    </RelativeLayout>
+</layout>
+
